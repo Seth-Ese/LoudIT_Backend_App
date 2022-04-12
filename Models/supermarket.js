@@ -1,15 +1,11 @@
 const mongoose = require('mongoose')
 
-const userSchema = mongoose.Schema({
-    firstName:{
+const superMarketSchema = mongoose.Schema({
+    fullName:{
         type:String,
         required:true
     },
-    lastName:{
-        type:String,
-        required:true
-    },
-    address:{
+    phoneNumber:{
         type:String,
         required:true
     },
@@ -21,21 +17,26 @@ const userSchema = mongoose.Schema({
         type:String,
         required:true
     },
-    phoneNumber:{
+    address:{
         type:String,
         required:true
     },
-    profile_picture:{
+    bankDetails:{
+        type:String,
+        required:true
+    },
+    profilePicture:{
         type:String,
         required:false
     },
     dateCreated:{
         type:Date,
         default:Date.now()
-    }
+    },
 })
-//creatung a user model
 
-const users = mongoose.model('Users',userSchema)
+//Creating the supermarket model
 
-module.exports = users
+const supermarket = mongoose.model('Supermarket',superMarketSchema)
+
+module.exports = supermarket
